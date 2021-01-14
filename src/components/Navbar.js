@@ -27,7 +27,14 @@ class Navbar  extends React.Component {
 
   handleClick(e){
 
+ 
+//e.nativeEvent.Mouseevent
 
+  //if e is define means key is press (any on keyboard) else mouse is click...
+  
+  console.log(e.nativeEvent.type);
+  
+    if( e.nativeEvent.type!="click")
     if (e.key !=="Enter") 
     {
       

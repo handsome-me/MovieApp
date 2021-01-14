@@ -54,16 +54,35 @@ export function searchMove(inputChange)
 
 
     return (dispatch)=>{
+        if(!inputChange)
+        {
+            inputChange="kabir singh";
+        }
     
         fetch('https://api.themoviedb.org/3/search/movie?api_key=61a165cb4b595b07d284dbedb9ee6473&query='+inputChange)
-        .then(result=>result.json()).then(data=>{
+        .then(result=>result.json(), (rejectedPromise)=>{
+
+            console.log("rejectPromse-", rejectedPromise);
+            
+        }).then(data=>{
 
 
             console.log("Got the API response........",data);
            
            data= data.results;
 
+           if(data.length==0)
+           {
+            data=[{title:"No Movie Found With Given Query......"}];
+            console.log("No movie found....",data);
+           }
+           
+
             dispatch(addMovies(data));
+
+        }).catch((error)=>{
+
+            console.error("error in fetch movie api call", error);
 
         })
 

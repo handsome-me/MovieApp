@@ -183,3 +183,31 @@ body {
   font-size: 20px;
   color: #6d6d6d;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .main {
+    width: 100%;
+    margin: 0;
+    margin-top: 30px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.search-container input {
+  height: 43px;
+  width: 220px;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  border: none;
+  font-size: 16px;
+  padding: 0 10px;
+  box-sizing: border-box;
+
+}
+.movie-card{
+
+  flex-direction: column;
+}
+
+}

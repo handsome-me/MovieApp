@@ -45,11 +45,13 @@ class MovieCard extends React.Component{
 <img alt="movie poster" src={"https://image.tmdb.org/t/p/w500//"+f.poster_path}/>
 </div>
                <div className='right'>
+             
         <div className='title'>{f.title}</div>
-        <div className='plot'>{f.Plot}</div>
+        <div className="release_date">Release Date- {f.release_date}</div>
+        <div className='plot'>{f.overview}</div>
         <div className='footer'></div>
 
-<div className='rating'> {f.vote_average}</div>
+<div className='rating' style={{margin:6}}>Rating -  {f.vote_average}</div>
 {
     isFav
 
