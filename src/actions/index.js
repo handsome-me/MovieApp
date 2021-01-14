@@ -1,6 +1,8 @@
+
+import ConsoleHelper from '../ConsoleHelper';
 export const ADD_MOVIES='ADD_MOVIES';
 export const REMOVE_FAV="REMOVE_FAV";
-
+ 
 
 export function addMovies(movies){
     
@@ -63,11 +65,12 @@ export function searchMove(inputChange)
         .then(result=>result.json(), (rejectedPromise)=>{
 
             console.log("rejectPromse-", rejectedPromise);
-            
+
         }).then(data=>{
 
 
-            console.log("Got the API response........",data);
+            ConsoleHelper("Got the API response........",data);
+            //console.log("Got the API response........",data);
            
            data= data.results;
 

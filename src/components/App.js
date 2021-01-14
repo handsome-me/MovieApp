@@ -7,6 +7,7 @@ import MovieCard from './MovieCard';
 import {addMovies, searchMove} from '../actions/index';
 import {setShowfav} from '../actions';
 
+import ConsoleHelper from '../ConsoleHelper';
 import  {myContext} from  '../index.js';
 
  
@@ -36,7 +37,7 @@ class  App extends React.Component{
       
 
      
-    console.log(this.props.store.getState());
+    ConsoleHelper(this.props.store.getState());
 
   }
 
@@ -78,18 +79,18 @@ class  App extends React.Component{
     
     //console.log("myContext",myContext);
   
-   console.log(this.props.store.getState());
+  ConsoleHelper(this.props.store.getState());
 
 
 
     const {movie}=this.props.store.getState();
     const {list, favourites, showFav}=movie;
-    console.log("render()--->>>>>>>", movie);
+    ConsoleHelper("render()--->>>>>>>", movie);
 
 
-    console.log("List ----<><>,..STORE...........",list);
+    ConsoleHelper("List ----<><>,..STORE...........",list);
     
-    console.log(this.props.store.getState());
+    ConsoleHelper(this.props.store.getState());
 
     
 
@@ -100,7 +101,7 @@ class  App extends React.Component{
     <myContext.Consumer>
     {
       (store)=>{
-      console.log(store);
+        ConsoleHelper(store);
     
 
    return(

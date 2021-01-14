@@ -1,11 +1,14 @@
 import React from 'react';
  import {addFav, removeFav} from '../actions'
+ import ConsoleHelper from '../ConsoleHelper';
+
+ 
 class MovieCard extends React.Component{
     
     handleFavClick=()=>{
         
-        console.log('fav button clicked');
-        console.log(this.props.f);
+        ConsoleHelper('fav button clicked');
+        ConsoleHelper(this.props.f);
         const {f} =this.props;
         this.props.dispatch(addFav(f));
 
@@ -21,7 +24,7 @@ class MovieCard extends React.Component{
           
          const {f} =this.props;
 
-         console.log(f);
+         ConsoleHelper(f);
          
          this.props.dispatch(removeFav (f));
           
