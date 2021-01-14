@@ -1,7 +1,8 @@
 import React from 'react';
 //import logo from './logo.svg';
 //import './App.css';
- 
+ import ConsoleHelper from '../ConsoleHelper';
+
 import {addMovies, searchMove} from '../actions/index';
 
 class Navbar  extends React.Component {
@@ -17,7 +18,7 @@ class Navbar  extends React.Component {
 
        inputChange= (e)=>{
         const value= e.target.value;
-   console.log(value);
+   ConsoleHelper(value);
 
    this.setState(
      {value:value}
@@ -32,24 +33,24 @@ class Navbar  extends React.Component {
 
   //if e is define means key is press (any on keyboard) else mouse is click...
   
-  console.log(e.nativeEvent.type);
+  ConsoleHelper(e.nativeEvent.type);
   
     if( e.nativeEvent.type!="click")
     if (e.key !=="Enter") 
     {
       
-      console.log("Wrong key pressed ......return", e.key);
+      ConsoleHelper("Wrong key pressed ......return", e.key);
       return;
       // callMyFunction();
     } 
 
-    console.log(e);
+    ConsoleHelper(e);
 
          const  value=this.state.value;
         
          const {dispatch}= this.props.store;
 
-           console.log('into handleClick()....',value);
+         ConsoleHelper('into handleClick()....',value);
         dispatch(searchMove(value));
 
          
