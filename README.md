@@ -1,1 +1,1 @@
-Live Demo-https://github.com/handsome-me/MovieApp
+Live Demo- https://searchmovieapi.netlify.app/
